@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QnA</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="shorcut icon" href="C:\xampp\htdocs\Psychology Cafe\img\favicon.png" type="image/x-icon">
+</head>
+<body>
+
+    <header>
+        <h1>Questions & Answers(Q&A)</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <img src="C:\xampp\htdocs\Psychology Cafe\img\favicon.png">
+            <li><a href="C:\xampp\htdocs\Psychology Cafe\index.html">Materi</a></li>
+            <li><a href="C:\xampp\htdocs\Psychology Cafe\FAQ\faq.html">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <h3>Silahkan Bertanya Apapun Tentang Psikologis</h3>
+                
+                <input type="text" id="name" placeholder="Nama" required>
+                <input type="text" id="email" placeholder="Alamat email" required>
+                <input type="text" id="phone" placeholder="Nomor handphone" required>
+                <textarea type="message" rows="4" placeholder="Tuliskan pertanyaan anda disini"></textarea>
+                <button type="submit">Kirim</button>
+            </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            Email.send({
+                Host : "smtp.gmail.com",
+                Username : "gamerokstar39@gmail.com",
+                Password : "farasabiyu50",
+                To : 'farrasad50@gmail.com',
+                From : document.getElementById("email").value,
+                Subject : "New Contact Form Enquery",
+                Body : "Name: " + document.getElementById("name").value
+                    + "<br> Email: " + document.getElementById("email").value
+                    + "<br> Phone no: " + document.getElementById("Phone").value
+                    + "<br> Message: " + document.getElementById("message").value
+            }).then(
+            message => alert("Message Sent Succefully")
+            );
+        }
+    </script>
+</body>
+</html>

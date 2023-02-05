@@ -1,0 +1,1 @@
+var sections = document.querySelectorAll('#intro, #section1, #section')
